@@ -72,7 +72,8 @@ module.exports.delete = async (req, res, next) => {
 module.exports.detail = (req, res, next) => {
 
   TaskGroup.findById(req.params.id)
-    .then(group => {
+    .populate('tasks')
+    .then((group) => {
       if(!group) next(createError(404, "TaskGroup not found"))
       else res.status(200).json(group)
     })
