@@ -14,6 +14,7 @@ const taskGroupSchema = new Schema(
   {
     timestamps: true,
     toJSON: {
+        virtuals: true,
         transform: function (doc, ret) {
         ret.id = ret._id;
         delete ret._id;
@@ -23,6 +24,12 @@ const taskGroupSchema = new Schema(
     }
   }
 )
+
+taskGroupSchema.virtual('tasks', {
+  ref: "Task",
+  foreignField: "group",
+  localField: "_id"
+})
 
 const TaskGroup = mongoose.model('TaskGroup', taskGroupSchema);
 

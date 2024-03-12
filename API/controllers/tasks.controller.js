@@ -31,3 +31,9 @@ module.exports.delete = (req, res, next) => {
     .catch(error => next(error))
 
 }
+
+module.exports.detail = (req, res, next) => {
+
+  
+
+}
