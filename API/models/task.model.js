@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const priorities = require("../data/priorities.json");
-const TaskGroup = require("./task-group.models");
 
 const taskSchema = new Schema(
 
