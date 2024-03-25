@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import tasksData from "../../../data/tasks.json"
 import TaskItem from '../task-item/TaskItem'
 import TaskFinder from '../task-finder/TaskFinder'
@@ -9,6 +9,8 @@ import TaskForm from '../task-form/TaskForm'
 function TaskList() {
 
   const [tasks, setTasks] = useState(tasksData)
+
+  
 
   const handleDeleteTask = (title) => {
 

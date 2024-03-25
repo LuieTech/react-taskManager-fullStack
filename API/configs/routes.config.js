@@ -3,6 +3,7 @@ const router = express.Router();
 const groups = require('../controllers/task-group.controller')
 const tasks = require('../controllers/tasks.controller')
 
+//taskGroup routes
 router.get('/task-groups', groups.list)
 router.post('/task-groups', groups.create)
 router.delete('/task-groups/:id', groups.delete)
